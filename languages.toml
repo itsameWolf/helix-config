@@ -1,6 +1,6 @@
 [[language]]
 name = "latex"
-language-server = {command = "/opt/homebrew/Cellar/ltex-ls/16.0.0/bin/ltex-ls"}
+language-server = {command = "/opt/ltex-ls/16.0.0/bin/ltex-ls"}
 file-types = ["tex"]
 scope = "source.tex"
 roots = []
