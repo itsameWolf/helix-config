@@ -1,7 +1,17 @@
 [[language]]
 name = "latex"
-language-server = {command = "/opt/homebrew/Cellar/ltex-ls/16.0.0/bin/ltex-ls"}
-file-types = ["tex"]
+language-servers = [ { name = "ltex-ls"}, {name = "texlab" , only-features = [ "completion" ] } ]
+file-types = ["tex", "md"]
 scope = "source.tex"
-roots = []
+roots = ["Tectonic.toml"]
+auto-format = true
 soft-wrap.enable = true
+soft-wrap.wrap-at-text-width = true
+text-width = 80
+[languange-server.ltex-ls]
+command = "/opt/homebrew/Cellar/ltex-ls/16.0.0/bin/ltex-ls"
+
+[[language]]
+name = "rust"
+[language-server.rust-analyzer.config.check]
+command = "clippy"

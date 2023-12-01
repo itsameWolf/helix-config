@@ -2,6 +2,8 @@ theme = "solarized_dark"
 
 [editor]
 cursorline = true
+shell = ["zsh"]
+line-number = "relative"
 
 [editor.statusline]
 left = ["mode", "spinner"]
@@ -15,6 +17,16 @@ mode.select = "SELECT"
 [editor.lsp]
 display-inlay-hints = true
 
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
 [editor.indent-guides]
 render = true
 skip-level = 1
+
+[editor.file-picker]
+hidden = false
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
