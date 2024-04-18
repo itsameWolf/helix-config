@@ -3,11 +3,34 @@ name = "latex"
 language-servers = [ { name = "ltex-ls"}, {name = "texlab" , only-features = [ "completion" ] } ]
 file-types = ["tex", "md"]
 scope = "source.tex"
-roots = ["Tectonic.toml"]
+roots = ["Tectonic.toml","main.tex","index.tex"]
 auto-format = true
 soft-wrap.enable = true
 soft-wrap.wrap-at-text-width = true
-text-width = 80
+text-width = 100
+
+[language-server.texlab]
+command = "texlab"
+
+[language-server.texlab.config.texlab.build]
+onSave = true
+forwardSearchAfter = true
+executable = "tectonic"
+args = [
+  "-X",
+  "compile",
+  "%f",
+  "--synctex",
+  "--keep-logs",
+  "--keep-intermediates",
+  "--outdir=build",
+  "-Zshell-escape",
+]
+
+[language-server.texlab.config.texlab.chktex]
+onOpenAndSave = true
+onEdit = true
+
 [languange-server.ltex-ls]
 command = "/opt/homebrew/Cellar/ltex-ls/16.0.0/bin/ltex-ls"
 
