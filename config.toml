@@ -1,9 +1,11 @@
-theme = "solarized_dark"
+theme = "nord"
 
 [editor]
 cursorline = true
 shell = ["zsh"]
-line-number = "relative"
+line-number = "absolute"
+scrolloff = 10
+bufferline = "multiple"
 
 [editor.statusline]
 left = ["mode", "spinner"]
@@ -30,3 +32,9 @@ hidden = false
 
 [editor.gutters]
 layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+
+[keys.normal]
+C-h = ":buffer-previous"
+C-l = ":buffer-next"
+C-w = ":buffer-close" 
