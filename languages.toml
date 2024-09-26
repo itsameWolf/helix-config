@@ -20,11 +20,12 @@ args = [
   "-X",
   "compile",
   "%f",
-  "--synctex",
+  # "--synctex", 
   "--keep-logs",
   "--keep-intermediates",
   "--outdir=build",
   "-Zshell-escape",
+  # ">>build/out.log"
 ]
 
 [language-server.texlab.config.texlab.chktex]
@@ -34,7 +35,28 @@ onEdit = true
 [languange-server.ltex-ls]
 command = "/opt/homebrew/Cellar/ltex-ls/16.0.0/bin/ltex-ls"
 
+[language-server.ltex-ls.config]
+ltex.language = "en-GB"
+ltex.dictionary = { "en-GB" = ["builtin"]}
+
+
 [[language]]
 name = "rust"
 [language-server.rust-analyzer.config.check]
 command = "clippy"
+
+[[language]]
+name = "python"
+auto-format = true
+
+[language-server.pylsp.config.pylsp]
+plugins.ruff.enabled = true
+plugins.black.enabled = true
+
+[[language]]
+name = "html"
+scope = "scope.urdf"
+file-types = ["urdf", "URDF"]
+roots = []
+indent = { tab-width = 2, unit = "  " }
+grammar = "html"
